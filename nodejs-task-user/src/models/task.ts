@@ -28,6 +28,17 @@ export class Task extends Model<Task>{
     @Column({
         type:DataType.BOOLEAN,
         allowNull:false,
-        default
+        defaultValue:true,
     })
+    state! : boolean;
+
+    @ForeignKey(() => User)
+    @Column({
+        type:DataType.INTEGER,
+        allowNull: false,
+    })
+    userId!: number;
+
+    @BelongsTo(() => User)
+    user!:User;
 }
