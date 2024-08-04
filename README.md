@@ -98,3 +98,19 @@ npm install dotenv
 
 5. Estructura de archivos y directorios
 
+6. archivo .env
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=password
+DB_NAME=task-user //por ejemplo
+PORT=3000
+
+7.archivo nodemon.json
+
+{
+    "watch": ["src"],
+    "ext": "ts",
+    "exec": "ts-node src/index.ts"
+}
+
