@@ -106,11 +106,25 @@ DB_PASSWORD=password
 DB_NAME=task-user //por ejemplo
 PORT=3000
 
-7.archivo nodemon.json
+7. archivo nodemon.json
 
 {
     "watch": ["src"],
     "ext": "ts",
     "exec": "ts-node src/index.ts"
 }
+
+8. Para poner a escuchar el servidor
+
+import express from 'express'
+import dotenv from 'dotenv'
+
+dotenv.config
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT,()=>{
+    console.log(`Servidor escuchando en el puerto ${PORT}`);
+});
 
