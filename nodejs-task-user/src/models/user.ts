@@ -5,13 +5,13 @@ import {
     DataType,
     PrimaryKey,
     AutoIncrement,
-    HasMany,
+    HasMany
 } from "sequelize-typescript";
 import { Task } from './task';
 
 @Table({
     tableName : "users",
-    timeStamps : true,
+    timestamps : true,
 })
 export class User extends Model{
     @PrimaryKey
@@ -23,7 +23,7 @@ export class User extends Model{
 
     @Column({
         type: DataType.STRING,
-        allowNul: false,
+        allowNull: false,
     })
     name!: string;
 
@@ -42,5 +42,4 @@ export class User extends Model{
 
     @HasMany(() => Task)
     tasks! : Task[];
-
 }
