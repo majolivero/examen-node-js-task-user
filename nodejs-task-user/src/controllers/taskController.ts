@@ -5,12 +5,12 @@ import TaskService from '../services/taskService';
 export default class TaskController {
     static async getAllTasks(req: Request, res: Response) {
         const taskService = container.resolve(TaskService);
-        const tasks = await taskService.getAllProducts();
+        const tasks = await taskService.getAllTasks();
         res.json(tasks); //Envia la lista de tareas como una respuesta JSON
     }
 
     static async getTaskById(req: Request, res: Response) {
-        const productService = container.resolve(TaskService);
+        const taskService = container.resolve(TaskService);
         const tasks = await taskService.getTaskById(parseInt(req.params.id));
         res.json(tasks); //Envia la tarea encontrada como una respuesta JSON
     }
